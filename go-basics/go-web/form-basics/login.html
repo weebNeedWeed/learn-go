@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <!-- The following piece of code make r.Form['username'] returns -->
+    <!-- [astaxie your-input-username] -->
+    <!-- <form action="/login?username=astaxie" method="post"> -->
+    <form action="/login" method="post">
+        <div>Username:<input type="text" name="username"></div>
+
+        <div>Password:<input type="password" name="password"></div>
+
+        <div>Age:<input type="text" name="age"></div>
+
+        <div>Eng name:<input type="text" name="engname"></div>
+
+        <div>Email:<input type="email" name="email"></div>
+
+        <select name="fruit">
+            <option value="apple">apple</option>
+            <option value="pear">pear</option>
+            <option value="banana">banana</option>
+        </select>
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+
+</html>
