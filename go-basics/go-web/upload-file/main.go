@@ -18,21 +18,20 @@ func upload(w http.ResponseWriter, r *http.Request) {
 	r.ParseMultipartForm(32 * 1024 * 1024)
 
 	file, fileHeader, err := r.FormFile("uploadfile")
-	defer file.Close()
-
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
+	defer file.Close()
 
 	// fmt.Printf("%v\n", fileHeader)
 	os.MkdirAll("./test", 0744)
 	f, err := os.OpenFile("./test/"+fileHeader.Filename, os.O_CREATE|os.O_WRONLY, 644)
-	defer f.Close()
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
+	defer f.Close()
 
 	io.Copy(f, file)
 }
